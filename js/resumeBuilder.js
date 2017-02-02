@@ -1,16 +1,4 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
 
- //$("#main").append("Michael J Lucero");
-
- /*var awesomeThoughts =
- 	"My name is Michael and I'm Awesome!";
-
- var funThoughts =
- 	awesomeThoughts.replace("AWESOME!", "FUN");
- $("#main").append(funThoughts);
- */
 
 var bio ={
 	"name": "Michael Lucero",
@@ -27,28 +15,54 @@ var bio ={
 	"biopic": "images/tokyo.jpg"
 }
 
+var education ={
+	"schools": [
+		{
+			"name": "Indiana University",
+			"location": "Bloomington, IN",
+			"degree": "Bachelors",
+			"majors": ["Informatics"],
+			"minors": ["Business"],
+			"dates": "2009",
+			"url": "http://www.informatics.indiana.edu/"
+		}
+	],
+	"onlineCourses":[
+		{
+			"title": "Intro to Programming NanoDegree Program",
+			"school": "Udacity",
+			"dates":"2016",
+			"url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000"
+		}
+	]
+}
 
-	var formattedName = HTMLheaderName.replace("%data%", bio.name);
-	$("#header").append(formattedName);
 
-	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-	$("#header").append(formattedRole);
+var work ={
+	"jobs": [
+		{
+			"employer": "Dominion Dealer Solutions",
+			"title": "DMS Data Specialist",
+			"dates": "September 2011 -Present",
+			"location" : "Indianapolis, IN",
+			"description": "Provides primary DMS integration support for " +
+				"Dominion's CRM software. Executes deployments by understanding " +
+				"requirments, managing client expectations, collecting required "+ 
+				"data from multi enviroments, and communicating with internal "+
+				"departments to achieve deadlines and success."
+		},
+		{
+			"employer": "Dominion Dealer Solutions",
+			"title": "Sr. Technical Analyst",
+			"dates": "November 2010 - September 2011 ",
+			"location" : "Indianapolis, IN",
+			"description": "Provided Tier1/Tier2 support clients " +
+				"and internal staff using Dominion's CRM software as well " +
+				"as Windows Servers, workstations and networks"
+		}		
+	]
+}
 
-	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-	$("#header, #footer-entry" ).append(formattedMobile);
-
-	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-	$("#header, #footer-entry").append(formattedEmail);
-
-	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-	$("#header, #footer-entry").append(formattedGithub);
-
-	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-	$("#header, #footer-entry").append(formattedLocation);
-
-	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-	$("#header").append(formattedWelcomeMsg);
-
-	var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
-	$("#header").append(formattedPic);
+$("#main").append(work["title"]);
+$("#main").append(education.name);
 
