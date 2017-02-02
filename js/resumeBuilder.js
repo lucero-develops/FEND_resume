@@ -31,11 +31,18 @@ var education ={
 		{
 			"title": "Intro to Programming NanoDegree Program",
 			"school": "Udacity",
-			"dates":"2016",
+			"dates":"Summer 2016",
 			"url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000"
+		},
+		{
+			"title": "Front-End Web Developer NanoDegree Program",
+			"school": "Udacity",
+			"dates":"Summer 2017",
+			"url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
 		}
 	]
 }
+
 
 
 var work ={
@@ -63,6 +70,25 @@ var work ={
 	]
 }
 
-$("#main").append(work["title"]);
-$("#main").append(education.name);
-
+var projects ={
+	"projects": [
+		{
+			"title": "Sample project 1",
+			"dates": "Sample date 1",
+			"description": "I didn't have any projects at the moment so I inserted placers so I can adjust at a later date",
+			"images": [
+				"images/197x148.gif",
+				"images/197x148.gif"
+			]
+		},
+		{
+			"title": "Sample project 2",
+			"dates": "Sample date 2",
+			"description": "I didn't have any projects at the moment so I inserted placers so I can adjust at a later date",
+			"images": [
+				"images/197x148.gif",
+				"images/197x148.gif"
+			]
+		}		
+	]
+}
