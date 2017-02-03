@@ -92,3 +92,16 @@ var projects ={
 		}		
 	]
 }
+
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+$("#header").append(formattedName);
+
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+$("#header").append(formattedRole);
+
+for(var i=0; i<bio.skills.length; i+=1){
+	var formattedSkills = HTMLskills.replace("%data%",bio.skills[i]);
+	$("#header").append(formattedSkills);
+}
+
