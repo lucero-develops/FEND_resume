@@ -94,14 +94,153 @@ var projects ={
 }
 
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-$("#header").append(formattedName);
+bio.display= function(){
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	$("#header").append(formattedName);
 
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").append(formattedRole);
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").append(formattedRole);
 
-for(var i=0; i<bio.skills.length; i+=1){
-	var formattedSkills = HTMLskills.replace("%data%",bio.skills[i]);
-	$("#header").append(formattedSkills);
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	$("#header, #footer-entry" ).append(formattedMobile);
+
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	$("#header, #footer-entry").append(formattedEmail);
+
+	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+	$("#header, #footer-entry").append(formattedGithub);
+
+	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+	$("#header, #footer-entry").append(formattedLocation);
+
+	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	$("#header").append(formattedWelcomeMsg);
+
+	var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
+	$("#header").append(formattedPic);
+
+	for(var i=0; i<bio.skills.length; i+=1){
+		var formattedSkills = HTMLskills.replace("%data%",bio.skills[i]);
+		$("#header").append(formattedSkills);
+}
 }
 
+work.display = function(){
+	for (job in work.jobs){
+		$("#workExperience").append(HTMLworkStart);
+
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+		$(".work-entry:last").append(formattedEmployerTitle);
+
+		var formattedDates = HTMLworkDates.replace("%data%",work.jobs[job].dates);
+		$(".work-entry:last").append(formattedDates);
+
+		var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		$(".work-entry:last").append(formattedWorkLocation);
+
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		$(".work-entry:last").append(formattedDescription);
+
+
+	}
+}
+
+
+projects.display = function(){
+	for (project in projects.projects){
+		$("#projects").append(HTMLprojectStart);
+
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		$(".project-entry:last").append(formattedTitle);
+
+		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		$(".project-entry:last").append(formattedDates);
+
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		$(".project-entry:last").append(formattedDescription);
+
+		if (projects.projects[project].images.length > 0){
+			for (image in projects.projects[project].images){
+				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+				$(".project-entry:last").append(formattedImage);
+			}
+		}
+	}
+}
+
+
+education.display = function(){
+	for(school in education.schools){
+		$("#education").append(HTMLschoolStart);
+
+		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+		var formattedSchoolTitle = formattedSchoolName + formattedDegree;
+
+		$(".education-entry:last").append(formattedSchoolTitle);
+
+		var formattedSchoolDates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
+		$(".education-entry:last").append(formattedSchoolDates);
+
+		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+		$(".education-entry:last").append(formattedSchoolLocation);
+
+		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
+		$(".education-entry:last").append(formattedMajor);
+
+		var formattedMinor = HTMLschoolMinor.replace("%data%", education.schools[school].minors);
+		$(".education-entry:last").append(formattedMinor);
+	}
+
+	for(onlineCourse in education.onlineCourses){	
+		$("#education").append(HTMLonlineClasses);	
+
+		var formattedOcTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
+		var formattedOcSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
+		var finalOcTitle = formattedOcSchool;
+		var finalOcTitle = formattedOcTitle + formattedOcSchool;
+
+		$(".Oc-entry:last").append(finalOcTitle);
+
+		var formattedOcDates = HTMLonlineDates.replace("%data%",education.onlineCourses[onlineCourse].dates);
+		$(".Oc-entry:last").append(formattedOcDates);
+
+		var formattedOcURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url);
+		$(".Oc-entry:last").append(formattedOcURL);
+	}
+}
+
+function locationizer(work_obj) {
+	var locationArray = [];
+
+	for (job in work_obj.jobs){
+		var newLocation = work_obj.jobs[job].location;
+		locationArray.push(newLocation);
+	}
+	return locationArray;
+}
+
+// Did locationizer() work? This line will tell you!
+console.log(locationizer(work));
+
+function inName(name) {
+	name = name.trim().split(" ");
+	console.log(name);
+	name[1] = name[1].toUpperCase();
+	name[0] = name[0].slice(0,1).toUpperCase() +
+		name[0].slice(1).toLowerCase();
+	return name [0] + " " +name[1];
+}
+
+$('#main').append(internationalizeButton);
+
+$("#mapDiv").append(googleMap);
+
+
+bio.display()
+work.display()
+projects.display()
+education.display()
