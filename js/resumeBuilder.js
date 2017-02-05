@@ -1,12 +1,12 @@
 
 
 var bio ={
-	"name": "Michael Lucero",
+	"name": "Lucy",
 	"role": "Front-end Developer",
 	"contacts": {
-		"mobile": "219-629-9352",
-		"email": "lucero.develops@gmail.com",
-		"github": "lucero-develops",
+		"mobile": "867-5309",
+		"email": "error@gmail.com",
+		"github": "error",
 		"location": "Indianapolis"
 	},
 	"welcomeMessage": "Life begins where your comfortzone ends!",
@@ -18,31 +18,31 @@ var bio ={
 var education ={
 	"schools": [
 		{
-			"name": "Indiana University",
-			"location": "Bloomington, IN",
-			"degree": "Bachelors",
-			"majors": ["Informatics"],
-			"minors": ["Business"],
-			"dates": "2009",
-			"url": "http://www.informatics.indiana.edu/"
-		}
-	],
-	"onlineCourses":[
-		{
-			"title": "Intro to Programming NanoDegree Program",
-			"school": "Udacity",
-			"dates":"Summer 2016",
-			"url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000"
+			"name": "Udacity",
+			"degree": "   nanoDegree",
+			"majors": ["FrontiEnd Web Developer"],
+			"dates": "April 2017",
+			"location": "Tokyo, Japan",
+			"url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
 		},
 		{
-			"title": "Front-End Web Developer NanoDegree Program",
-			"school": "Udacity",
-			"dates":"Summer 2017",
-			"url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+			"name": "Indiana University",
+			"location": "Interlaken, Switzerland ",
+			"degree": "Bachelors",
+			"majors": ["Informatics"],
+			"dates": "May 2009",
+			"url": "http://www.informatics.indiana.edu/"
+		},
+		{
+			"name": "Udacity",
+			"degree": "   nanoDegree",
+			"majors": ["Intro to Programming"],
+			"dates": "May 2016",
+			"location": "Barcelona, Spain",
+			"url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000"
 		}
 	]
 }
-
 
 
 var work ={
@@ -191,25 +191,8 @@ education.display = function(){
 		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
 		$(".education-entry:last").append(formattedMajor);
 
-		var formattedMinor = HTMLschoolMinor.replace("%data%", education.schools[school].minors);
-		$(".education-entry:last").append(formattedMinor);
-	}
-
-	for(onlineCourse in education.onlineCourses){	
-		$("#education").append(HTMLonlineClasses);	
-
-		var formattedOcTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
-		var formattedOcSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
-		var finalOcTitle = formattedOcSchool;
-		var finalOcTitle = formattedOcTitle + formattedOcSchool;
-
-		$(".Oc-entry:last").append(finalOcTitle);
-
-		var formattedOcDates = HTMLonlineDates.replace("%data%",education.onlineCourses[onlineCourse].dates);
-		$(".Oc-entry:last").append(formattedOcDates);
-
-		var formattedOcURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url);
-		$(".Oc-entry:last").append(formattedOcURL);
+		/*var formattedMinor = HTMLschoolMinor.replace("%data%", education.schools[school].minors);
+		$(".education-entry:last").append(formattedMinor);*/
 	}
 }
 
