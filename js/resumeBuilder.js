@@ -11,7 +11,7 @@ var bio ={
 	},
 	"welcomeMessage": "Life begins where your comfortzone ends!",
 	"skills": [
-		"Customer Service", "SQL", "HTML", "CSS", "Java Script"],
+		"SQL", "HTML", "CSS", "Java Script"],
 	"biopic": "images/tokyo.jpg"
 }
 
@@ -22,12 +22,12 @@ var education ={
 			"degree": "   nanoDegree",
 			"majors": ["FrontiEnd Web Developer"],
 			"dates": "April 2017",
-			"location": "Tokyo, Japan",
+			"location": "Boom, Belgium",
 			"url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
 		},
 		{
 			"name": "Indiana University",
-			"location": "Interlaken, Switzerland ",
+			"location": "Bloomington, IN",
 			"degree": "Bachelors",
 			"majors": ["Informatics"],
 			"dates": "May 2009",

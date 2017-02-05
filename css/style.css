@@ -148,6 +148,11 @@ a {
   padding: 10px;
 }
 
+/*taking the bullet points off of the flex-item class */
+li {
+  list-style-type: none;
+}
+
 .center-content {
   padding: 2.5% 5%;
 }
