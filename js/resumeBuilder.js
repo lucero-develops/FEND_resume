@@ -1,7 +1,7 @@
 
 
 var bio ={
-	"name": "Lucy",
+	"name": "BRandon",
 	"role": "Front-end Developer",
 	"contacts": {
 		"mobile": "867-5309",
@@ -22,7 +22,7 @@ var education ={
 			"degree": "   nanoDegree",
 			"majors": ["FrontiEnd Web Developer"],
 			"dates": "April 2017",
-			"location": "Boom, Belgium",
+			"location": "Merrillville, IN",
 			"url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
 		},
 		{
@@ -38,7 +38,7 @@ var education ={
 			"degree": "   nanoDegree",
 			"majors": ["Intro to Programming"],
 			"dates": "May 2016",
-			"location": "Barcelona, Spain",
+			"location": "NewYork, N",
 			"url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000"
 		}
 	]
@@ -51,7 +51,7 @@ var work ={
 			"employer": "Dominion Dealer Solutions",
 			"title": "DMS Data Specialist",
 			"dates": "September 2011 -Present",
-			"location" : "Indianapolis, IN",
+			"location" : "Califorina",
 			"description": "Provides primary DMS integration support for " +
 				"Dominion's CRM software. Executes deployments by understanding " +
 				"requirments, managing client expectations, collecting required "+ 
@@ -62,7 +62,7 @@ var work ={
 			"employer": "Dominion Dealer Solutions",
 			"title": "Sr. Technical Analyst",
 			"dates": "November 2010 - September 2011 ",
-			"location" : "Indianapolis, IN",
+			"location" : "",
 			"description": "Provided Tier1/Tier2 support clients " +
 				"and internal staff using Dominion's CRM software as well " +
 				"as Windows Servers, workstations and networks"
